@@ -430,7 +430,7 @@ void VulkanWindow::setClearColor(const QColor &color)
     {
         p->window->clearColor() = clearColor;
 
-        p->commandGraph->getChildren().clear();
+        p->commandGraph->children.clear();
         p->commandGraph->addChild(vsg::createRenderGraphForView(p->window, p->camera, p->scenegraph));
     }
 }
