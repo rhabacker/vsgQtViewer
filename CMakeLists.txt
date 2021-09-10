@@ -14,26 +14,26 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(vsg REQUIRED)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-setup_build_vars()
-setup_dir_vars()
+vsg_setup_build_vars()
+vsg_setup_dir_vars()
 
-add_target_clang_format(
+vsg_add_target_clang_format(
     FILES
         src/*.cpp
 )
-add_target_clobber()
-add_target_cppcheck(
+vsg_add_target_clobber()
+vsg_add_target_cppcheck(
     FILES
         src/*.h
         src/*.cpp
 )
-add_target_docs(
+vsg_add_target_docs(
     FILES
         src
 )
-add_target_uninstall()
+vsg_add_target_uninstall()
 
-add_option_maintainer(
+vsg_add_option_maintainer(
     PREFIX ${PROJECT_NAME}
     RCLEVEL ${PROJECT_NAME}_RELEASE_CANDIDATE
 )
@@ -77,4 +77,4 @@ install(TARGETS vsgQtViewer
         RUNTIME DESTINATION bin
 )
 
-add_feature_summary()
+vsg_add_feature_summary()
